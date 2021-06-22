@@ -12,7 +12,7 @@ contract Artwork {
     string public name;
     int public price;
 
-    constructor(string _name, int _price, address _paymentAddressSeller, address _marketplaceAddress) {
+    constructor(string memory _name, int _price, address _paymentAddressSeller, address _marketplaceAddress) public {
         paymentAddressSeller = _paymentAddressSeller;
         marketplaceAddress = _marketplaceAddress;
         name = _name;

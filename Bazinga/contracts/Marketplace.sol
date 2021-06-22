@@ -16,7 +16,7 @@ contract Marketplace {
 
     Artwork artwork;
 
-    constructor(address paymentAddressA, int currentBalanceA, address paymentAddressB, int currentBalanceB) {
+    constructor(address paymentAddressA, int currentBalanceA, address paymentAddressB, int currentBalanceB) public {
         if (paymentAddressA == paymentAddressB) {
             revert();
         }
@@ -50,7 +50,7 @@ contract Marketplace {
         }
     }
 
-    function listArtwork(string name, int price) public {
+    function listArtwork(string memory name, int price) public {
         artwork = new Artwork(name, price, msg.sender, address(this));
     }
 }

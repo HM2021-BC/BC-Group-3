@@ -2,8 +2,6 @@ const Marketplace = artifacts.require("Marketplace");
 const MarketplaceCreator = artifacts.require("MarketplaceCreator");
 const Artwork = artifacts.require("Artwork");
 
-const addressA = "";
-const addressB = "";
 const balanceA = 1000000000;
 const balanceB = 1000000000;
 

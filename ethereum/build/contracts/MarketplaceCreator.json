@@ -1,0 +1,1328 @@
+{
+  "contractName": "MarketplaceCreator",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "marketplaces",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "paymentAddressA",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "currentBalanceA",
+          "type": "int256"
+        },
+        {
+          "internalType": "address",
+          "name": "paymentAddressB",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "currentBalanceB",
+          "type": "int256"
+        }
+      ],
+      "name": "createMarketplace",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDeployedMarketplaces",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"paymentAddressA\",\"type\":\"address\"},{\"internalType\":\"int256\",\"name\":\"currentBalanceA\",\"type\":\"int256\"},{\"internalType\":\"address\",\"name\":\"paymentAddressB\",\"type\":\"address\"},{\"internalType\":\"int256\",\"name\":\"currentBalanceB\",\"type\":\"int256\"}],\"name\":\"createMarketplace\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getDeployedMarketplaces\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"marketplaces\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/projects/BC-Group-3/ethereum/contracts/MarketplaceCreator.sol\":\"MarketplaceCreator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/projects/BC-Group-3/ethereum/contracts/Artwork.sol\":{\"keccak256\":\"0xf39d11769ffa41589d6e5df5bdeb94aa641ae245ecd05771f51f7b6dd9a99451\",\"urls\":[\"bzz-raw://225b0142e7478bb5a4839e0405eef7c8f0294b60a2fbcd4bcc5343939c477e81\",\"dweb:/ipfs/QmVskJU164Yp3hY9BtHyeU1s2NNiDAuCKeou9aRWxNo9bM\"]},\"/projects/BC-Group-3/ethereum/contracts/Marketplace.sol\":{\"keccak256\":\"0x10c21b0cfff88b3edae001a921ace57894ccb31e92fe23760407311e44494a9e\",\"urls\":[\"bzz-raw://478fadfbf422926395d40992fa195d91e0ed617db2a51298ae58bb9f8a914457\",\"dweb:/ipfs/QmNyxr554t6T8k1a4zvsPwVh81qFkhQqokxGRyMZhmQXYB\"]},\"/projects/BC-Group-3/ethereum/contracts/MarketplaceCreator.sol\":{\"keccak256\":\"0x7b97bdf3f8702be56b9d735cd0f607c3c1aab10bd6df2a1f32eaabb62bf198ea\",\"urls\":[\"bzz-raw://adaeeccf1e8405a72b8db8bd69f6db9b36f64a4523b9fb67fc472bcdbfb14556\",\"dweb:/ipfs/QmTkKp1CAFMZsqKdZBH7zzTBsPyuRU348TkfMriLPEBHxx\"]},\"/projects/BC-Group-3/ethereum/contracts/Ownable.sol\":{\"keccak256\":\"0x1442314cb4206dce1f22d65a9477eee0547e99a4804dc79d917d0f1e214700bd\",\"urls\":[\"bzz-raw://51a7655c63a65c98891f186756b4e63abf93f55ad4eb16e5179773e1b67a9dcf\",\"dweb:/ipfs/QmSduW8LwHMBcKdmArW7tVUiM7kC3Rw7mBPp8BnELok8Dm\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610c67806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80632b64deec1461004657806357d2ced61461007f5780637344a9b9146100d7575b600080fd5b6100636004803603602081101561005c57600080fd5b5035610113565b604080516001600160a01b039092168252519081900360200190f35b61008761013a565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100c35781810151838201526020016100ab565b505050509050019250505060405180910390f35b610111600480360360808110156100ed57600080fd5b506001600160a01b038135811691602081013591604082013516906060013561019c565b005b6000818154811061012057fe5b6000918252602090912001546001600160a01b0316905081565b6060600080548060200260200160405190810160405280929190818152602001828054801561019257602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311610174575b5050505050905090565b6000848484846040516101ae9061024a565b6001600160a01b039485168152602081019390935292166040808301919091526060820192909252905190819003608001906000f0801580156101f5573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630180546001600160a01b0319166001600160a01b03929092169190911790555050505050565b6109db806102588339019056fe608060405234801561001057600080fd5b506040516109db3803806109db8339818101604052608081101561003357600080fd5b50805160208201516040830151606090930151600080546001600160a01b03191633179055919290916001600160a01b03808516908316141561007557600080fd5b600180546001600160a01b03199081166001600160a01b03968716179091556002939093556003805490931691909316179055600455610921806100ba6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806313e893a81461005c57806333f2f2e71461009c5780638da5cb5b146100d4578063c4131ce4146100f8578063f2fde38b146101a0575b600080fd5b6100886004803603604081101561007257600080fd5b506001600160a01b0381351690602001356101c6565b604080519115158252519081900360200190f35b6100d2600480360360608110156100b257600080fd5b506001600160a01b0381358116916020810135909116906040013561022b565b005b6100dc61026f565b604080516001600160a01b039092168252519081900360200190f35b6100d26004803603604081101561010e57600080fd5b81019060208101813564010000000081111561012957600080fd5b82018360208201111561013b57600080fd5b8035906020019184600183028401116401000000008311171561015d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550509135925061027e915050565b6100d2600480360360208110156101b657600080fd5b50356001600160a01b031661036d565b6001546000906001600160a01b0384811691161480156101e857506002548213155b156101f557506001610225565b6003546001600160a01b03848116911614801561021457506004548213155b1561022157506001610225565b5060005b92915050565b6001546001600160a01b038381169116141561024a5760028054820190555b6003546001600160a01b038481169116141561026a576004805482900390555b505050565b6000546001600160a01b031681565b6000546001600160a01b031633141561036957818133306040516102a1906103ae565b60208082018590526001600160a01b0380851660408401528316606083015260808083528651908301528551829160a08301919088019080838360005b838110156102f65781810151838201526020016102de565b50505050905090810190601f1680156103235780820380516001836020036101000a031916815260200191505b5095505050505050604051809103906000f080158015610347573d6000803e3d6000fd5b50600580546001600160a01b0319166001600160a01b03929092169190911790555b5050565b6000546001600160a01b03163314156103ab576001600160a01b038116156103ab57600080546001600160a01b0319166001600160a01b0383161790555b50565b610531806103bc8339019056fe608060405234801561001057600080fd5b506040516105313803806105318339818101604052608081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b90830190602082018581111561006857600080fd5b825164010000000081118282018810171561008257600080fd5b82525081516020918201929091019080838360005b838110156100af578181015183820152602001610097565b50505050905090810190601f1680156100dc5780820380516001836020036101000a031916815260200191505b5060409081526020828101519183015160609093015160008054610100600160a81b0319166101006001600160a01b038088169190910291909117909155600180546001600160a01b031916918316919091179055865192955092935061014891600291870190610154565b505050600355506101ef565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061019557805160ff19168380011785556101c2565b828001600101855582156101c2579182015b828111156101c25782518255916020019190600101906101a7565b506101ce9291506101d2565b5090565b6101ec91905b808211156101ce57600081556001016101d8565b90565b610333806101fe6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c57806307987270146100d95780632ddcde1a146100fd578063a035b1fe14610107578063daa17f4914610121575b600080fd5b610064610129565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561009e578181015183820152602001610086565b50505050905090810190601f1680156100cb5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e16101b4565b604080516001600160a01b039092168252519081900360200190f35b6101056101c8565b005b61010f6102e9565b60408051918252519081900360200190f35b6100e16102ef565b6002805460408051602060018416156101000260001901909316849004601f810184900484028201840190925281815292918301828280156101ac5780601f10610181576101008083540402835291602001916101ac565b820191906000526020600020905b81548152906001019060200180831161018f57829003601f168201915b505050505081565b60005461010090046001600160a01b031681565b60005461010090046001600160a01b03163314156101e557600080fd5b6001546003546040805163027d127560e31b81523360048201526024810192909252516001600160a01b039092169182916313e893a8916044808301926020929190829003018186803b15801561023b57600080fd5b505afa15801561024f573d6000803e3d6000fd5b505050506040513d602081101561026557600080fd5b505161027057600080fd5b60008054600354604080516333f2f2e760e01b81526001600160a01b0361010090940484166004820152336024820152604481019290925251918416926333f2f2e79260648084019382900301818387803b1580156102ce57600080fd5b505af11580156102e2573d6000803e3d6000fd5b5050505050565b60035481565b6001546001600160a01b03168156fea265627a7a7231582068e9afeb2d17403d79f18628db59c045306b63648e9c93d8bc9af28f25e97d4164736f6c63430005100032a265627a7a72315820029cc1526f432a1456a397deefb84eb561c2f1457c8a77daf09ac065ff4b061f64736f6c63430005100032a265627a7a7231582059179f236044f52758f76a8633c114409d3f2184f22d619ee0dc44108026c35c64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80632b64deec1461004657806357d2ced61461007f5780637344a9b9146100d7575b600080fd5b6100636004803603602081101561005c57600080fd5b5035610113565b604080516001600160a01b039092168252519081900360200190f35b61008761013a565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100c35781810151838201526020016100ab565b505050509050019250505060405180910390f35b610111600480360360808110156100ed57600080fd5b506001600160a01b038135811691602081013591604082013516906060013561019c565b005b6000818154811061012057fe5b6000918252602090912001546001600160a01b0316905081565b6060600080548060200260200160405190810160405280929190818152602001828054801561019257602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311610174575b5050505050905090565b6000848484846040516101ae9061024a565b6001600160a01b039485168152602081019390935292166040808301919091526060820192909252905190819003608001906000f0801580156101f5573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630180546001600160a01b0319166001600160a01b03929092169190911790555050505050565b6109db806102588339019056fe608060405234801561001057600080fd5b506040516109db3803806109db8339818101604052608081101561003357600080fd5b50805160208201516040830151606090930151600080546001600160a01b03191633179055919290916001600160a01b03808516908316141561007557600080fd5b600180546001600160a01b03199081166001600160a01b03968716179091556002939093556003805490931691909316179055600455610921806100ba6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806313e893a81461005c57806333f2f2e71461009c5780638da5cb5b146100d4578063c4131ce4146100f8578063f2fde38b146101a0575b600080fd5b6100886004803603604081101561007257600080fd5b506001600160a01b0381351690602001356101c6565b604080519115158252519081900360200190f35b6100d2600480360360608110156100b257600080fd5b506001600160a01b0381358116916020810135909116906040013561022b565b005b6100dc61026f565b604080516001600160a01b039092168252519081900360200190f35b6100d26004803603604081101561010e57600080fd5b81019060208101813564010000000081111561012957600080fd5b82018360208201111561013b57600080fd5b8035906020019184600183028401116401000000008311171561015d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550509135925061027e915050565b6100d2600480360360208110156101b657600080fd5b50356001600160a01b031661036d565b6001546000906001600160a01b0384811691161480156101e857506002548213155b156101f557506001610225565b6003546001600160a01b03848116911614801561021457506004548213155b1561022157506001610225565b5060005b92915050565b6001546001600160a01b038381169116141561024a5760028054820190555b6003546001600160a01b038481169116141561026a576004805482900390555b505050565b6000546001600160a01b031681565b6000546001600160a01b031633141561036957818133306040516102a1906103ae565b60208082018590526001600160a01b0380851660408401528316606083015260808083528651908301528551829160a08301919088019080838360005b838110156102f65781810151838201526020016102de565b50505050905090810190601f1680156103235780820380516001836020036101000a031916815260200191505b5095505050505050604051809103906000f080158015610347573d6000803e3d6000fd5b50600580546001600160a01b0319166001600160a01b03929092169190911790555b5050565b6000546001600160a01b03163314156103ab576001600160a01b038116156103ab57600080546001600160a01b0319166001600160a01b0383161790555b50565b610531806103bc8339019056fe608060405234801561001057600080fd5b506040516105313803806105318339818101604052608081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b90830190602082018581111561006857600080fd5b825164010000000081118282018810171561008257600080fd5b82525081516020918201929091019080838360005b838110156100af578181015183820152602001610097565b50505050905090810190601f1680156100dc5780820380516001836020036101000a031916815260200191505b5060409081526020828101519183015160609093015160008054610100600160a81b0319166101006001600160a01b038088169190910291909117909155600180546001600160a01b031916918316919091179055865192955092935061014891600291870190610154565b505050600355506101ef565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061019557805160ff19168380011785556101c2565b828001600101855582156101c2579182015b828111156101c25782518255916020019190600101906101a7565b506101ce9291506101d2565b5090565b6101ec91905b808211156101ce57600081556001016101d8565b90565b610333806101fe6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c57806307987270146100d95780632ddcde1a146100fd578063a035b1fe14610107578063daa17f4914610121575b600080fd5b610064610129565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561009e578181015183820152602001610086565b50505050905090810190601f1680156100cb5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e16101b4565b604080516001600160a01b039092168252519081900360200190f35b6101056101c8565b005b61010f6102e9565b60408051918252519081900360200190f35b6100e16102ef565b6002805460408051602060018416156101000260001901909316849004601f810184900484028201840190925281815292918301828280156101ac5780601f10610181576101008083540402835291602001916101ac565b820191906000526020600020905b81548152906001019060200180831161018f57829003601f168201915b505050505081565b60005461010090046001600160a01b031681565b60005461010090046001600160a01b03163314156101e557600080fd5b6001546003546040805163027d127560e31b81523360048201526024810192909252516001600160a01b039092169182916313e893a8916044808301926020929190829003018186803b15801561023b57600080fd5b505afa15801561024f573d6000803e3d6000fd5b505050506040513d602081101561026557600080fd5b505161027057600080fd5b60008054600354604080516333f2f2e760e01b81526001600160a01b0361010090940484166004820152336024820152604481019290925251918416926333f2f2e79260648084019382900301818387803b1580156102ce57600080fd5b505af11580156102e2573d6000803e3d6000fd5b5050505050565b60035481565b6001546001600160a01b03168156fea265627a7a7231582068e9afeb2d17403d79f18628db59c045306b63648e9c93d8bc9af28f25e97d4164736f6c63430005100032a265627a7a72315820029cc1526f432a1456a397deefb84eb561c2f1457c8a77daf09ac065ff4b061f64736f6c63430005100032a265627a7a7231582059179f236044f52758f76a8633c114409d3f2184f22d619ee0dc44108026c35c64736f6c63430005100032",
+  "sourceMap": "95:580:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;95:580:2;;;;;;;",
+  "deployedSourceMap": "95:580:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;95:580:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;129:29;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;129:29:2;;:::i;:::-;;;;-1:-1:-1;;;;;129:29:2;;;;;;;;;;;;;;575:97;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;575:97:2;;;;;;;;;;;;;;;;;165:404;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;;;;;;165:404:2;;;;;;;;;;;;;;;;;;;;:::i;:::-;;129:29;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;129:29:2;;-1:-1:-1;129:29:2;:::o;575:97::-;631:16;658:12;651:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;651:19:2;;;;;;;;;;;;;;;;;;;;;;;575:97;:::o;165:404::-;301:22;381:15;414;447;480;348:161;;;;;:::i;:::-;-1:-1:-1;;;;;348:161:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;348:161:2;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;529:12:2;27:10:-1;;39:1;23:18;;45:23;;529:33:2;;;;;;;-1:-1:-1;;;;;;529:33:2;-1:-1:-1;;;;;529:33:2;;;;;;;;;;-1:-1:-1;;;;;165:404:2:o;95:580::-;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\nimport \"./Marketplace.sol\";\n\ncontract MarketplaceCreator {\n    address[] public marketplaces;\n\n    function createMarketplace(address paymentAddressA, int currentBalanceA, address paymentAddressB, int currentBalanceB) public {\n        address newMarketplace = address (\n            new Marketplace(\n                paymentAddressA,\n                currentBalanceA,\n                paymentAddressB,\n                currentBalanceB\n            )\n        );\n        marketplaces.push(newMarketplace);\n    }\n\n    function getDeployedMarketplaces() public view returns( address[] memory) { return marketplaces;} \n}",
+  "sourcePath": "/projects/BC-Group-3/ethereum/contracts/MarketplaceCreator.sol",
+  "ast": {
+    "absolutePath": "/projects/BC-Group-3/ethereum/contracts/MarketplaceCreator.sol",
+    "exportedSymbols": {
+      "MarketplaceCreator": [
+        284
+      ]
+    },
+    "id": 285,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 240,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:2"
+      },
+      {
+        "absolutePath": "/projects/BC-Group-3/ethereum/contracts/Marketplace.sol",
+        "file": "./Marketplace.sol",
+        "id": 241,
+        "nodeType": "ImportDirective",
+        "scope": 285,
+        "sourceUnit": 239,
+        "src": "66:27:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          238
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 284,
+        "linearizedBaseContracts": [
+          284
+        ],
+        "name": "MarketplaceCreator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 244,
+            "name": "marketplaces",
+            "nodeType": "VariableDeclaration",
+            "scope": 284,
+            "src": "129:29:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 242,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "129:7:2",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 243,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "129:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 273,
+              "nodeType": "Block",
+              "src": "291:278:2",
+              "statements": [
+                {
+                  "assignments": [
+                    256
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 256,
+                      "name": "newMarketplace",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 273,
+                      "src": "301:22:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 255,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "301:7:2",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 266,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 260,
+                            "name": "paymentAddressA",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 246,
+                            "src": "381:15:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 261,
+                            "name": "currentBalanceA",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 248,
+                            "src": "414:15:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_int256",
+                              "typeString": "int256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 262,
+                            "name": "paymentAddressB",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 250,
+                            "src": "447:15:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 263,
+                            "name": "currentBalanceB",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 252,
+                            "src": "480:15:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_int256",
+                              "typeString": "int256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_int256",
+                              "typeString": "int256"
+                            },
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_int256",
+                              "typeString": "int256"
+                            }
+                          ],
+                          "id": 259,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "NewExpression",
+                          "src": "348:15:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_int256_$_t_address_$_t_int256_$returns$_t_contract$_Marketplace_$238_$",
+                            "typeString": "function (address,int256,address,int256) returns (contract Marketplace)"
+                          },
+                          "typeName": {
+                            "contractScope": null,
+                            "id": 258,
+                            "name": "Marketplace",
+                            "nodeType": "UserDefinedTypeName",
+                            "referencedDeclaration": 238,
+                            "src": "352:11:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Marketplace_$238",
+                              "typeString": "contract Marketplace"
+                            }
+                          }
+                        },
+                        "id": 264,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "348:161:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Marketplace_$238",
+                          "typeString": "contract Marketplace"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Marketplace_$238",
+                          "typeString": "contract Marketplace"
+                        }
+                      ],
+                      "id": 257,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "326:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 265,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "326:193:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "301:218:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 270,
+                        "name": "newMarketplace",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 256,
+                        "src": "547:14:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 267,
+                        "name": "marketplaces",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 244,
+                        "src": "529:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 269,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "529:17:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 271,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "529:33:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 272,
+                  "nodeType": "ExpressionStatement",
+                  "src": "529:33:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 274,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createMarketplace",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 253,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 246,
+                  "name": "paymentAddressA",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 274,
+                  "src": "192:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 245,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "192:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 248,
+                  "name": "currentBalanceA",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 274,
+                  "src": "217:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 247,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "217:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 250,
+                  "name": "paymentAddressB",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 274,
+                  "src": "238:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 249,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "238:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 252,
+                  "name": "currentBalanceB",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 274,
+                  "src": "263:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 251,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "263:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "191:92:2"
+            },
+            "returnParameters": {
+              "id": 254,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "291:0:2"
+            },
+            "scope": 284,
+            "src": "165:404:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 282,
+              "nodeType": "Block",
+              "src": "649:23:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 280,
+                    "name": "marketplaces",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 244,
+                    "src": "658:12:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                      "typeString": "address[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 279,
+                  "id": 281,
+                  "nodeType": "Return",
+                  "src": "651:19:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 283,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDeployedMarketplaces",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 275,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "607:2:2"
+            },
+            "returnParameters": {
+              "id": 279,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 278,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 283,
+                  "src": "631:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 276,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "631:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 277,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "631:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "629:19:2"
+            },
+            "scope": 284,
+            "src": "575:97:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 285,
+        "src": "95:580:2"
+      }
+    ],
+    "src": "32:643:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/projects/BC-Group-3/ethereum/contracts/MarketplaceCreator.sol",
+      "exportedSymbols": {
+        "MarketplaceCreator": [
+          284
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 240,
+        "name": "PragmaDirective",
+        "src": "32:32:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 239,
+          "absolutePath": "/projects/BC-Group-3/ethereum/contracts/Marketplace.sol",
+          "file": "./Marketplace.sol",
+          "scope": 285,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 241,
+        "name": "ImportDirective",
+        "src": "66:27:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            238
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            284
+          ],
+          "name": "MarketplaceCreator",
+          "scope": 285
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "marketplaces",
+              "scope": 284,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address[]",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "address[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 242,
+                    "name": "ElementaryTypeName",
+                    "src": "129:7:2"
+                  }
+                ],
+                "id": 243,
+                "name": "ArrayTypeName",
+                "src": "129:9:2"
+              }
+            ],
+            "id": 244,
+            "name": "VariableDeclaration",
+            "src": "129:29:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createMarketplace",
+              "scope": 284,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "paymentAddressA",
+                      "scope": 274,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 245,
+                        "name": "ElementaryTypeName",
+                        "src": "192:7:2"
+                      }
+                    ],
+                    "id": 246,
+                    "name": "VariableDeclaration",
+                    "src": "192:23:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "currentBalanceA",
+                      "scope": 274,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int",
+                          "type": "int256"
+                        },
+                        "id": 247,
+                        "name": "ElementaryTypeName",
+                        "src": "217:3:2"
+                      }
+                    ],
+                    "id": 248,
+                    "name": "VariableDeclaration",
+                    "src": "217:19:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "paymentAddressB",
+                      "scope": 274,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 249,
+                        "name": "ElementaryTypeName",
+                        "src": "238:7:2"
+                      }
+                    ],
+                    "id": 250,
+                    "name": "VariableDeclaration",
+                    "src": "238:23:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "currentBalanceB",
+                      "scope": 274,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int",
+                          "type": "int256"
+                        },
+                        "id": 251,
+                        "name": "ElementaryTypeName",
+                        "src": "263:3:2"
+                      }
+                    ],
+                    "id": 252,
+                    "name": "VariableDeclaration",
+                    "src": "263:19:2"
+                  }
+                ],
+                "id": 253,
+                "name": "ParameterList",
+                "src": "191:92:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 254,
+                "name": "ParameterList",
+                "src": "291:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        256
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "newMarketplace",
+                          "scope": 273,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "address",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 255,
+                            "name": "ElementaryTypeName",
+                            "src": "301:7:2"
+                          }
+                        ],
+                        "id": 256,
+                        "name": "VariableDeclaration",
+                        "src": "301:22:2"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "address",
+                          "type_conversion": true
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_Marketplace_$238",
+                                  "typeString": "contract Marketplace"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "type": "type(address)",
+                              "value": "address"
+                            },
+                            "id": 257,
+                            "name": "ElementaryTypeNameExpression",
+                            "src": "326:7:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "contract Marketplace",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_int256",
+                                      "typeString": "int256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_int256",
+                                      "typeString": "int256"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "function (address,int256,address,int256) returns (contract Marketplace)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "contractScope": null,
+                                      "name": "Marketplace",
+                                      "referencedDeclaration": 238,
+                                      "type": "contract Marketplace"
+                                    },
+                                    "id": 258,
+                                    "name": "UserDefinedTypeName",
+                                    "src": "352:11:2"
+                                  }
+                                ],
+                                "id": 259,
+                                "name": "NewExpression",
+                                "src": "348:15:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 246,
+                                  "type": "address",
+                                  "value": "paymentAddressA"
+                                },
+                                "id": 260,
+                                "name": "Identifier",
+                                "src": "381:15:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 248,
+                                  "type": "int256",
+                                  "value": "currentBalanceA"
+                                },
+                                "id": 261,
+                                "name": "Identifier",
+                                "src": "414:15:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 250,
+                                  "type": "address",
+                                  "value": "paymentAddressB"
+                                },
+                                "id": 262,
+                                "name": "Identifier",
+                                "src": "447:15:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 252,
+                                  "type": "int256",
+                                  "value": "currentBalanceB"
+                                },
+                                "id": 263,
+                                "name": "Identifier",
+                                "src": "480:15:2"
+                              }
+                            ],
+                            "id": 264,
+                            "name": "FunctionCall",
+                            "src": "348:161:2"
+                          }
+                        ],
+                        "id": 265,
+                        "name": "FunctionCall",
+                        "src": "326:193:2"
+                      }
+                    ],
+                    "id": 266,
+                    "name": "VariableDeclarationStatement",
+                    "src": "301:218:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (address) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 244,
+                                  "type": "address[] storage ref",
+                                  "value": "marketplaces"
+                                },
+                                "id": 267,
+                                "name": "Identifier",
+                                "src": "529:12:2"
+                              }
+                            ],
+                            "id": 269,
+                            "name": "MemberAccess",
+                            "src": "529:17:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 256,
+                              "type": "address",
+                              "value": "newMarketplace"
+                            },
+                            "id": 270,
+                            "name": "Identifier",
+                            "src": "547:14:2"
+                          }
+                        ],
+                        "id": 271,
+                        "name": "FunctionCall",
+                        "src": "529:33:2"
+                      }
+                    ],
+                    "id": 272,
+                    "name": "ExpressionStatement",
+                    "src": "529:33:2"
+                  }
+                ],
+                "id": 273,
+                "name": "Block",
+                "src": "291:278:2"
+              }
+            ],
+            "id": 274,
+            "name": "FunctionDefinition",
+            "src": "165:404:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getDeployedMarketplaces",
+              "scope": 284,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 275,
+                "name": "ParameterList",
+                "src": "607:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 283,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "address[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "address[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 276,
+                            "name": "ElementaryTypeName",
+                            "src": "631:7:2"
+                          }
+                        ],
+                        "id": 277,
+                        "name": "ArrayTypeName",
+                        "src": "631:9:2"
+                      }
+                    ],
+                    "id": 278,
+                    "name": "VariableDeclaration",
+                    "src": "631:16:2"
+                  }
+                ],
+                "id": 279,
+                "name": "ParameterList",
+                "src": "629:19:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 279
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 244,
+                          "type": "address[] storage ref",
+                          "value": "marketplaces"
+                        },
+                        "id": 280,
+                        "name": "Identifier",
+                        "src": "658:12:2"
+                      }
+                    ],
+                    "id": 281,
+                    "name": "Return",
+                    "src": "651:19:2"
+                  }
+                ],
+                "id": 282,
+                "name": "Block",
+                "src": "649:23:2"
+              }
+            ],
+            "id": 283,
+            "name": "FunctionDefinition",
+            "src": "575:97:2"
+          }
+        ],
+        "id": 284,
+        "name": "ContractDefinition",
+        "src": "95:580:2"
+      }
+    ],
+    "id": 285,
+    "name": "SourceUnit",
+    "src": "32:643:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "660": {
+      "events": {},
+      "links": {},
+      "address": "0x0832bAbCfDBC9F4CD02ADfD53E189855De766BC9",
+      "transactionHash": "0x185cc570e792d30985a53f92fb230f457ce690dc8d0d853d6fc344001d4383fe"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x9dAF7C41D5325aC38C4446F91053A271d2AE0c44",
+      "transactionHash": "0x350ace4071f7a0201fdef6537166409053fa2bee5ceb8c878ab3e933de31fdb7"
+    }
+  },
+  "schemaVersion": "3.4.0",
+  "updatedAt": "2021-06-24T20:47:19.067Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

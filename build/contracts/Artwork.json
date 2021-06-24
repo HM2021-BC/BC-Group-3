@@ -98,15 +98,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"int256\",\"name\":\"_price\",\"type\":\"int256\"},{\"internalType\":\"address\",\"name\":\"_paymentAddressSeller\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_marketplaceAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[],\"name\":\"buyArtwork\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"marketplaceAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"paymentAddressSeller\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"price\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/projects/BC-Group-3/Bazinga/contracts/Artwork.sol\":\"Artwork\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/projects/BC-Group-3/Bazinga/contracts/Artwork.sol\":{\"keccak256\":\"0xf39d11769ffa41589d6e5df5bdeb94aa641ae245ecd05771f51f7b6dd9a99451\",\"urls\":[\"bzz-raw://225b0142e7478bb5a4839e0405eef7c8f0294b60a2fbcd4bcc5343939c477e81\",\"dweb:/ipfs/QmVskJU164Yp3hY9BtHyeU1s2NNiDAuCKeou9aRWxNo9bM\"]},\"/projects/BC-Group-3/Bazinga/contracts/Marketplace.sol\":{\"keccak256\":\"0xe73c9dceabb23b9d628fd6cf70d41ddd71e2d977b0924f8a897783d39e8e5cc3\",\"urls\":[\"bzz-raw://8bbe546798f7f1062bacfd2bd4b0dff08833c9c5fd9bc024ae311a078e9210d3\",\"dweb:/ipfs/QmeG9jyRuwM52yfP5NSr7B1SaXygxLEorArT6Zg22v14qA\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506040516107733803806107738339818101604052608081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b8382019150602082018581111561006957600080fd5b825186600182028301116401000000008211171561008657600080fd5b8083526020830192505050908051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b5060405260200180519060200190929190805190602001909291908051906020019092919050505081600060016101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555083600290805190602001906101a79291906101b8565b50826003819055505050505061025d565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101f957805160ff1916838001178555610227565b82800160010185558215610227579182015b8281111561022657825182559160200191906001019061020b565b5b5090506102349190610238565b5090565b61025a91905b8082111561025657600081600090555060010161023e565b5090565b90565b6105078061026c6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c57806307987270146100df5780632ddcde1a14610129578063a035b1fe14610133578063daa17f4914610151575b600080fd5b61006461019b565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7610239565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61013161025f565b005b61013b6104a6565b6040518082815260200191505060405180910390f35b6101596104ac565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102315780601f1061020657610100808354040283529160200191610231565b820191906000526020600020905b81548152906001019060200180831161021457829003601f168201915b505050505081565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff16600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614156102ba57600080fd5b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690508073ffffffffffffffffffffffffffffffffffffffff166313e893a8336003546040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060206040518083038186803b15801561036857600080fd5b505afa15801561037c573d6000803e3d6000fd5b505050506040513d602081101561039257600080fd5b81019080805190602001909291905050506103ac57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166333f2f2e7600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff16336003546040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050600060405180830381600087803b15801561048b57600080fd5b505af115801561049f573d6000803e3d6000fd5b5050505050565b60035481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158203ed9a6a9ca74bfa917a06970504a54f1af684b5df67762bd362d50855b240af264736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c57806307987270146100df5780632ddcde1a14610129578063a035b1fe14610133578063daa17f4914610151575b600080fd5b61006461019b565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7610239565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61013161025f565b005b61013b6104a6565b6040518082815260200191505060405180910390f35b6101596104ac565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102315780601f1061020657610100808354040283529160200191610231565b820191906000526020600020905b81548152906001019060200180831161021457829003601f168201915b505050505081565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff16600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614156102ba57600080fd5b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690508073ffffffffffffffffffffffffffffffffffffffff166313e893a8336003546040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060206040518083038186803b15801561036857600080fd5b505afa15801561037c573d6000803e3d6000fd5b505050506040513d602081101561039257600080fd5b81019080805190602001909291905050506103ac57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166333f2f2e7600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff16336003546040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050600060405180830381600087803b15801561048b57600080fd5b505af115801561049f573d6000803e3d6000fd5b5050505050565b60035481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158203ed9a6a9ca74bfa917a06970504a54f1af684b5df67762bd362d50855b240af264736f6c63430005100032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"int256\",\"name\":\"_price\",\"type\":\"int256\"},{\"internalType\":\"address\",\"name\":\"_paymentAddressSeller\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_marketplaceAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[],\"name\":\"buyArtwork\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"marketplaceAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"paymentAddressSeller\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"price\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/projects/BC-Group-3/contracts/Artwork.sol\":\"Artwork\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/projects/BC-Group-3/contracts/Artwork.sol\":{\"keccak256\":\"0xf39d11769ffa41589d6e5df5bdeb94aa641ae245ecd05771f51f7b6dd9a99451\",\"urls\":[\"bzz-raw://225b0142e7478bb5a4839e0405eef7c8f0294b60a2fbcd4bcc5343939c477e81\",\"dweb:/ipfs/QmVskJU164Yp3hY9BtHyeU1s2NNiDAuCKeou9aRWxNo9bM\"]},\"/projects/BC-Group-3/contracts/Marketplace.sol\":{\"keccak256\":\"0x10c21b0cfff88b3edae001a921ace57894ccb31e92fe23760407311e44494a9e\",\"urls\":[\"bzz-raw://478fadfbf422926395d40992fa195d91e0ed617db2a51298ae58bb9f8a914457\",\"dweb:/ipfs/QmNyxr554t6T8k1a4zvsPwVh81qFkhQqokxGRyMZhmQXYB\"]},\"/projects/BC-Group-3/contracts/Ownable.sol\":{\"keccak256\":\"0x1442314cb4206dce1f22d65a9477eee0547e99a4804dc79d917d0f1e214700bd\",\"urls\":[\"bzz-raw://51a7655c63a65c98891f186756b4e63abf93f55ad4eb16e5179773e1b67a9dcf\",\"dweb:/ipfs/QmSduW8LwHMBcKdmArW7tVUiM7kC3Rw7mBPp8BnELok8Dm\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516107733803806107738339818101604052608081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b8382019150602082018581111561006957600080fd5b825186600182028301116401000000008211171561008657600080fd5b8083526020830192505050908051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b5060405260200180519060200190929190805190602001909291908051906020019092919050505081600060016101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555083600290805190602001906101a79291906101b8565b50826003819055505050505061025d565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101f957805160ff1916838001178555610227565b82800160010185558215610227579182015b8281111561022657825182559160200191906001019061020b565b5b5090506102349190610238565b5090565b61025a91905b8082111561025657600081600090555060010161023e565b5090565b90565b6105078061026c6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c57806307987270146100df5780632ddcde1a14610129578063a035b1fe14610133578063daa17f4914610151575b600080fd5b61006461019b565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7610239565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61013161025f565b005b61013b6104a6565b6040518082815260200191505060405180910390f35b6101596104ac565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102315780601f1061020657610100808354040283529160200191610231565b820191906000526020600020905b81548152906001019060200180831161021457829003601f168201915b505050505081565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff16600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614156102ba57600080fd5b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690508073ffffffffffffffffffffffffffffffffffffffff166313e893a8336003546040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060206040518083038186803b15801561036857600080fd5b505afa15801561037c573d6000803e3d6000fd5b505050506040513d602081101561039257600080fd5b81019080805190602001909291905050506103ac57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166333f2f2e7600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff16336003546040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050600060405180830381600087803b15801561048b57600080fd5b505af115801561049f573d6000803e3d6000fd5b5050505050565b60035481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158200db71023ae40a327d611b9d3ea0edc47bd319554c17e060096d4e99ad433c32a64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806306fdde031461005c57806307987270146100df5780632ddcde1a14610129578063a035b1fe14610133578063daa17f4914610151575b600080fd5b61006461019b565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100e7610239565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61013161025f565b005b61013b6104a6565b6040518082815260200191505060405180910390f35b6101596104ac565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102315780601f1061020657610100808354040283529160200191610231565b820191906000526020600020905b81548152906001019060200180831161021457829003601f168201915b505050505081565b600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff16600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614156102ba57600080fd5b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690508073ffffffffffffffffffffffffffffffffffffffff166313e893a8336003546040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060206040518083038186803b15801561036857600080fd5b505afa15801561037c573d6000803e3d6000fd5b505050506040513d602081101561039257600080fd5b81019080805190602001909291905050506103ac57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166333f2f2e7600060019054906101000a900473ffffffffffffffffffffffffffffffffffffffff16336003546040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050600060405180830381600087803b15801561048b57600080fd5b505af115801561049f573d6000803e3d6000fd5b5050505050565b60035481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158200db71023ae40a327d611b9d3ea0edc47bd319554c17e060096d4e99ad433c32a64736f6c63430005100032",
   "sourceMap": "95:804:0:-;;;264:269;8:9:-1;5:2;;;30:1;27;20:12;5:2;264:269:0;;;;;;;;;;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;264:269:0;;;;;;;;;;;;;19:11:-1;14:3;11:20;8:2;;;44:1;41;34:12;8:2;71:11;66:3;62:21;55:28;;123:4;118:3;114:14;159:9;141:16;138:31;135:2;;;182:1;179;172:12;135:2;219:3;213:10;330:9;325:1;311:12;307:20;289:16;285:43;282:58;261:11;247:12;244:29;233:115;230:2;;;361:1;358;351:12;230:2;384:12;379:3;372:25;420:4;415:3;411:14;404:21;;0:432;;264:269:0;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;264:269:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;409:21;386:20;;:44;;;;;;;;;;;;;;;;;;461:19;440:18;;:40;;;;;;;;;;;;;;;;;;497:5;490:4;:12;;;;;;;;;;;;:::i;:::-;;520:6;512:5;:14;;;;264:269;;;;95:804;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
   "deployedSourceMap": "95:804:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;95:804:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;217:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;217:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;137:35;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;539:358;;;:::i;:::-;;241:16;;;:::i;:::-;;;;;;;;;;;;;;;;;;;178:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;217:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;137:35::-;;;;;;;;;;;;;:::o;539:358::-;607:10;583:34;;:20;;;;;;;;;;;:34;;;579:73;;;633:8;;;579:73;662:23;700:18;;;;;;;;;;;662:57;;735:11;:24;;;760:10;772:5;;735:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;735:43:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;735:43:0;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;735:43:0;;;;;;;;;;;;;;;;730:83;;794:8;;;730:83;823:11;:25;;;849:20;;;;;;;;;;;871:10;883:5;;823:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;823:66:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;823:66:0;;;;539:358;:::o;241:16::-;;;;:::o;178:33::-;;;;;;;;;;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\nimport \"./Marketplace.sol\";\n\ncontract Artwork {\n\n    bool isSold;\n\n    address public paymentAddressSeller;\n    address public marketplaceAddress;\n    string public name;\n    int public price;\n\n    constructor(string memory _name, int _price, address _paymentAddressSeller, address _marketplaceAddress) public {\n        paymentAddressSeller = _paymentAddressSeller;\n        marketplaceAddress = _marketplaceAddress;\n        name = _name;\n        price = _price;\n    }\n\n    function buyArtwork() public {\n\n        if (paymentAddressSeller == msg.sender) {\n            revert();\n        }\n\n        Marketplace marketplace = Marketplace(marketplaceAddress);\n\n        if (!marketplace.checkBalance(msg.sender, price)) {\n            revert();\n        }\n\n        marketplace.updateBalance(paymentAddressSeller, msg.sender, price);\n\n    }\n}",
-  "sourcePath": "/projects/BC-Group-3/Bazinga/contracts/Artwork.sol",
+  "sourcePath": "/projects/BC-Group-3/contracts/Artwork.sol",
   "ast": {
-    "absolutePath": "/projects/BC-Group-3/Bazinga/contracts/Artwork.sol",
+    "absolutePath": "/projects/BC-Group-3/contracts/Artwork.sol",
     "exportedSymbols": {
       "Artwork": [
         81
@@ -130,12 +130,12 @@
         "src": "32:32:0"
       },
       {
-        "absolutePath": "/projects/BC-Group-3/Bazinga/contracts/Marketplace.sol",
+        "absolutePath": "/projects/BC-Group-3/contracts/Marketplace.sol",
         "file": "./Marketplace.sol",
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 82,
-        "sourceUnit": 234,
+        "sourceUnit": 239,
         "src": "66:27:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -650,7 +650,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 289,
+                        "referencedDeclaration": 373,
                         "src": "607:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -696,10 +696,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              294,
-                              295
+                              378,
+                              379
                             ],
-                            "referencedDeclaration": 294,
+                            "referencedDeclaration": 378,
                             "src": "633:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -742,7 +742,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Marketplace_$233",
+                        "typeIdentifier": "t_contract$_Marketplace_$238",
                         "typeString": "contract Marketplace"
                       },
                       "typeName": {
@@ -750,10 +750,10 @@
                         "id": 52,
                         "name": "Marketplace",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 233,
+                        "referencedDeclaration": 238,
                         "src": "662:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Marketplace_$233",
+                          "typeIdentifier": "t_contract$_Marketplace_$238",
                           "typeString": "contract Marketplace"
                         }
                       },
@@ -790,10 +790,10 @@
                       "name": "Marketplace",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 233,
+                      "referencedDeclaration": 238,
                       "src": "688:11:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_contract$_Marketplace_$233_$",
+                        "typeIdentifier": "t_type$_t_contract$_Marketplace_$238_$",
                         "typeString": "type(contract Marketplace)"
                       }
                     },
@@ -807,7 +807,7 @@
                     "nodeType": "FunctionCall",
                     "src": "688:31:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Marketplace_$233",
+                      "typeIdentifier": "t_contract$_Marketplace_$238",
                       "typeString": "contract Marketplace"
                     }
                   },
@@ -837,7 +837,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 289,
+                            "referencedDeclaration": 373,
                             "src": "760:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -892,7 +892,7 @@
                           "referencedDeclaration": 53,
                           "src": "735:11:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_Marketplace_$233",
+                            "typeIdentifier": "t_contract$_Marketplace_$238",
                             "typeString": "contract Marketplace"
                           }
                         },
@@ -903,7 +903,7 @@
                         "lValueRequested": false,
                         "memberName": "checkBalance",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 177,
+                        "referencedDeclaration": 180,
                         "src": "735:24:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_external_view$_t_address_$_t_int256_$returns$_t_bool_$",
@@ -948,10 +948,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              294,
-                              295
+                              378,
+                              379
                             ],
-                            "referencedDeclaration": 294,
+                            "referencedDeclaration": 378,
                             "src": "794:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -1004,7 +1004,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 289,
+                          "referencedDeclaration": 373,
                           "src": "871:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1063,7 +1063,7 @@
                         "referencedDeclaration": 53,
                         "src": "823:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Marketplace_$233",
+                          "typeIdentifier": "t_contract$_Marketplace_$238",
                           "typeString": "contract Marketplace"
                         }
                       },
@@ -1074,7 +1074,7 @@
                       "lValueRequested": false,
                       "memberName": "updateBalance",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 211,
+                      "referencedDeclaration": 214,
                       "src": "823:25:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_int256_$returns$__$",
@@ -1135,7 +1135,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/projects/BC-Group-3/Bazinga/contracts/Artwork.sol",
+      "absolutePath": "/projects/BC-Group-3/contracts/Artwork.sol",
       "exportedSymbols": {
         "Artwork": [
           81
@@ -1161,8 +1161,8 @@
       },
       {
         "attributes": {
-          "SourceUnit": 234,
-          "absolutePath": "/projects/BC-Group-3/Bazinga/contracts/Marketplace.sol",
+          "SourceUnit": 239,
+          "absolutePath": "/projects/BC-Group-3/contracts/Marketplace.sol",
           "file": "./Marketplace.sol",
           "scope": 82,
           "symbolAliases": [
@@ -1772,7 +1772,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 289,
+                                  "referencedDeclaration": 373,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1818,10 +1818,10 @@
                                         null
                                       ],
                                       "overloadedDeclarations": [
-                                        294,
-                                        295
+                                        378,
+                                        379
                                       ],
-                                      "referencedDeclaration": 294,
+                                      "referencedDeclaration": 378,
                                       "type": "function () pure",
                                       "value": "revert"
                                     },
@@ -1872,7 +1872,7 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Marketplace",
-                              "referencedDeclaration": 233,
+                              "referencedDeclaration": 238,
                               "type": "contract Marketplace"
                             },
                             "id": 52,
@@ -1910,7 +1910,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 233,
+                              "referencedDeclaration": 238,
                               "type": "type(contract Marketplace)",
                               "value": "Marketplace"
                             },
@@ -1991,7 +1991,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "checkBalance",
-                                  "referencedDeclaration": 177,
+                                  "referencedDeclaration": 180,
                                   "type": "function (address,int256) view external returns (bool)"
                                 },
                                 "children": [
@@ -2032,7 +2032,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 289,
+                                      "referencedDeclaration": 373,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2097,10 +2097,10 @@
                                         null
                                       ],
                                       "overloadedDeclarations": [
-                                        294,
-                                        295
+                                        378,
+                                        379
                                       ],
-                                      "referencedDeclaration": 294,
+                                      "referencedDeclaration": 378,
                                       "type": "function () pure",
                                       "value": "revert"
                                     },
@@ -2166,7 +2166,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "updateBalance",
-                              "referencedDeclaration": 211,
+                              "referencedDeclaration": 214,
                               "type": "function (address,address,int256) external"
                             },
                             "children": [
@@ -2221,7 +2221,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 289,
+                                  "referencedDeclaration": 373,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2284,7 +2284,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.0",
-  "updatedAt": "2021-06-24T11:37:08.805Z",
+  "updatedAt": "2021-06-24T19:30:15.382Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

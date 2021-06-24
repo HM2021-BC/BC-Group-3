@@ -1,6 +1,6 @@
-# Bazinga
+# Bazinga - 
 
-## Projektinformationen
+## Projektbeschreibung
 
 Über die Plattform sollen die Urheberrechte bzw. Eigentumsrechte für immaterielle
 Vermögensgegenstände verwaltet und gehandelt werden können. Insbesondere sog.
@@ -19,11 +19,30 @@ Geld in Form von Ethereum an den Verkäufer.
 * Truffle Suite
 * Morpheus Labs SEED
 
-## Teammitglieder
+## Team (BC-Group-3) 
 
 * Vitaliia Savchyn - savchyn@hm.edu
 * Fabian Rittmeier - f.rittmeier@hm.edu
 * Simon Hirner - simon.hirner@hm.edu
+
+## Benutzung
+
+### Kompilieren des Projekts
+1. Navigation in den Projektordner: cd BC-Group-3
+2. Kompilieren des Projekts: truffle compile
+
+### Ausführung der Tests
+1. Navigation in den Projektordner: cd BC-Group-3
+2. Ausführung der Tests: truffle test
+
+### Einsatz der Smart Contracts im lokalem Ethereum Netzwerk der Truffle Entwicklungsumgebung
+1. Navigation in den Projektordner: cd BC-Group-3
+2. Öffnen der Truffle Entwicklungsumgebung: truffle develop
+3. Deployen der Smart Contracts im lokalem Ethereum Netzwerk: truffle migrate
+
+### Einsatz der Smart Contracts im Morpheus Labs BPaaS Ethereum PoA Netzwerk
+1. Navigation in den Ordner ethereum im Projektordner: cd BC-Group-3/ethereum
+2. Einsatz der Smart Contracts im Moprheus Labs Ethereum Netzwerk: truffle migrate --network private_poa
 
 ## GitHub Repository
 

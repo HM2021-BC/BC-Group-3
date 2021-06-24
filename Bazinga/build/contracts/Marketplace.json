@@ -376,10 +376,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              327,
-                              328
+                              294,
+                              295
                             ],
-                            "referencedDeclaration": 327,
+                            "referencedDeclaration": 294,
                             "src": "456:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -1735,7 +1735,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 322,
+                            "referencedDeclaration": 289,
                             "src": "1560:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1765,7 +1765,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 336,
+                              "referencedDeclaration": 303,
                               "src": "1580:4:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_Marketplace_$233",
@@ -2394,10 +2394,10 @@
                                         null
                                       ],
                                       "overloadedDeclarations": [
-                                        327,
-                                        328
+                                        294,
+                                        295
                                       ],
-                                      "referencedDeclaration": 327,
+                                      "referencedDeclaration": 294,
                                       "type": "function () pure",
                                       "value": "revert"
                                     },
@@ -3888,7 +3888,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 322,
+                                      "referencedDeclaration": 289,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -3941,7 +3941,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 336,
+                                      "referencedDeclaration": 303,
                                       "type": "contract Marketplace",
                                       "value": "this"
                                     },
@@ -3997,12 +3997,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x8E2d57B97Ef43d9efBE38D30303EbD2CFA51676C",
-      "transactionHash": "0x53e349a4bd2ef60c53d4cca964a1e2988149cd40f4d2961bfc611043c49df9b3"
+      "address": "0xe8Afb9ca5bDD619EbE96f1222179C52c53E7BcAf",
+      "transactionHash": "0xf2e45c61f5ef549f9226b8102a12d2d8ee90e54111c50eda684d620bf0c941d3"
     }
   },
   "schemaVersion": "3.4.0",
-  "updatedAt": "2021-06-22T21:50:34.872Z",
+  "updatedAt": "2021-06-24T11:37:08.794Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

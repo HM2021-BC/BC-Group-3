@@ -650,7 +650,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 322,
+                        "referencedDeclaration": 289,
                         "src": "607:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -696,10 +696,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              327,
-                              328
+                              294,
+                              295
                             ],
-                            "referencedDeclaration": 327,
+                            "referencedDeclaration": 294,
                             "src": "633:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -837,7 +837,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 322,
+                            "referencedDeclaration": 289,
                             "src": "760:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -948,10 +948,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              327,
-                              328
+                              294,
+                              295
                             ],
-                            "referencedDeclaration": 327,
+                            "referencedDeclaration": 294,
                             "src": "794:6:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -1004,7 +1004,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 322,
+                          "referencedDeclaration": 289,
                           "src": "871:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1772,7 +1772,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 322,
+                                  "referencedDeclaration": 289,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1818,10 +1818,10 @@
                                         null
                                       ],
                                       "overloadedDeclarations": [
-                                        327,
-                                        328
+                                        294,
+                                        295
                                       ],
-                                      "referencedDeclaration": 327,
+                                      "referencedDeclaration": 294,
                                       "type": "function () pure",
                                       "value": "revert"
                                     },
@@ -2032,7 +2032,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 322,
+                                      "referencedDeclaration": 289,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2097,10 +2097,10 @@
                                         null
                                       ],
                                       "overloadedDeclarations": [
-                                        327,
-                                        328
+                                        294,
+                                        295
                                       ],
-                                      "referencedDeclaration": 327,
+                                      "referencedDeclaration": 294,
                                       "type": "function () pure",
                                       "value": "revert"
                                     },
@@ -2221,7 +2221,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 322,
+                                  "referencedDeclaration": 289,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2284,7 +2284,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.0",
-  "updatedAt": "2021-06-22T21:50:34.883Z",
+  "updatedAt": "2021-06-24T11:37:08.805Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

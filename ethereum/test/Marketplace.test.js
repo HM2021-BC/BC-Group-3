@@ -7,20 +7,21 @@ const balanceB = 1000000000;
 
 let marketplaceCreator;
 let marketplace;
-let marketplaceAddresses;
+let marketplaceAddress;
 let artwork;
 
 contract("Bazinga Test", (accounts) => {
     before(async()=>{
         marketplaceCreator = await MarketplaceCreator.new()
         await marketplaceCreator.createMarketplace(accounts[0], balanceA, accounts[1], balanceB);
-        marketplaceAddresses = await marketplaceCreator.getDeployedMarketplaces.call();
+        marketplaceAddress = await marketplaceCreator.getDeployedMarketplaces.call();
         marketplace = await Marketplace.at(marketplaceAddresses[0]);
         //artwork = await Artwork.new("Testname", addressA, addressB, address(marketplace));
     });
 
+    //Check all Variable Initialization
     it('marketplace has address', async () => {
-        assert.ok(marketplaceAddresses);
+        assert.ok(marketplaceAddress);
     });
 
     it('marketplace has userA', async () => {
@@ -33,4 +34,22 @@ contract("Bazinga Test", (accounts) => {
         assert.ok(userA);
     });
 
+    it('marketplace has Artwork', async () => {
+        artwork = await marketplace.artwork.call();
+        assert.ok(userA);
+    });
+
+
+    //Check all functions
+    it('checks account balance', async () => {
+        //TODO
+    });
+
+    it('updates account balances', async () => {
+        //TODO
+    });
+
+    it('lists all available artwork', async () => {
+        //TODO
+    });
 })

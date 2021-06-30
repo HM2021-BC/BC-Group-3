@@ -8,7 +8,7 @@ contract MarketplaceCreator {
 
     function createMarketplace() public {
         address newMarketplace = address (
-            new Marketplace()
+            new Marketplace(msg.sender)
         );
         marketplaces.push(newMarketplace);
     }

@@ -6,14 +6,9 @@ import "./Marketplace.sol";
 contract MarketplaceCreator {
     address[] public marketplaces;
 
-    function createMarketplace(address paymentAddressA, int currentBalanceA, address paymentAddressB, int currentBalanceB) public {
+    function createMarketplace() public {
         address newMarketplace = address (
-            new Marketplace(
-                paymentAddressA,
-                currentBalanceA,
-                paymentAddressB,
-                currentBalanceB
-            )
+            new Marketplace()
         );
         marketplaces.push(newMarketplace);
     }

@@ -16,7 +16,9 @@ Geld in Form von Ethereum an den Verkäufer.
 
 * Ethereum
 * Solidity
-* Truffle Suite
+* Truffle
+* Node.js
+* Web3.js
 * Morpheus Labs SEED
 
 ## Team (BC-Group-3) 

@@ -3,35 +3,18 @@ pragma solidity >=0.4.22 <0.9.0;
 
 import "./Marketplace.sol";
 
-contract Artwork {
+contract Artwork is Ownable {
 
-    bool isSold;
+    string public imageHash;
+    string public imageUrl;
+    address public author;
 
-    address public paymentAddressSeller;
-    address public marketplaceAddress;
-    string public name;
-    int public price;
-
-    constructor(string memory _name, int _price, address _paymentAddressSeller, address _marketplaceAddress) public {
-        paymentAddressSeller = _paymentAddressSeller;
-        marketplaceAddress = _marketplaceAddress;
+    constructor(string memory _name, int _price, string memory _imageHash, string memory _imageUrl, address _author) public {
         name = _name;
         price = _price;
-    }
-
-    function buyArtwork() public {
-
-        if (paymentAddressSeller == msg.sender) {
-            revert();
-        }
-
-        Marketplace marketplace = Marketplace(marketplaceAddress);
-
-        if (!marketplace.checkBalance(msg.sender, price)) {
-            revert();
-        }
-
-        marketplace.updateBalance(paymentAddressSeller, msg.sender, price);
-
+        owner = msg.sender;
+        imageHash = _imageHash;
+        imageUrl = _imageUrl;
+        author = _author;        
     }
 }

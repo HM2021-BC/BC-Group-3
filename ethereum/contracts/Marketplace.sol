@@ -4,54 +4,66 @@ pragma solidity >=0.4.22 <0.9.0;
 import "./Artwork.sol";
 import "./Ownable.sol";
 
-contract Marketplace is Ownable {
+contract Marketplace {
 
-    struct UserInfo { 
-        address paymentAddress;
-        int currentBalance;
+    Ownable[] private ownables = [];
+    Ownable[] public forSale = [];
+
+    constructor() public {
+
+    }
+    
+    //register new Ownable item in the marketplace
+    function registerOwnable(Ownable ownable) private {
+        if (msg.sender == ownable.owner){
+            ownables.add(ownable);
+        }
     }
 
-    UserInfo userInfoA;
+    //generate and register new Artwork item in the marketplace
+    function registerArtwork(string memory _name, int _price, string memory _imageHash, string memory _imageUrl, address _author) public {
+        Artwork artwork = new Artwork(_name, _price, _imageHash, _imageUrl, _author);        
+        registerOwnable(artwork);
+    }
 
-    UserInfo userInfoB;
+    //declares ownable item for sale
+    function declareForSale(Ownable ownable, uint price) public {
+        if (msg.sender == ownable.owner){
+            ownable.upForSale(price);
+            forSale.add(ownable);
+        }
+    }
 
-    Artwork artwork;
-
-    constructor(address paymentAddressA, int currentBalanceA, address paymentAddressB, int currentBalanceB) public {
-        if (paymentAddressA == paymentAddressB) {
+    //Buyer buys ownable
+    function buyOwnable(Ownable ownable) public {
+        if(msg.sender == ownable.owner){
             revert();
         }
-
-        userInfoA.paymentAddress = paymentAddressA;
-        userInfoA.currentBalance = currentBalanceA;
-
-        userInfoB.paymentAddress = paymentAddressB;
-        userInfoB.currentBalance = currentBalanceB;
+        if(msg.sender != ownable.owner) {
+            uint price = forSale[ownable];
+            if (!checkBalance(msg.sender, price)){
+                revert();  
+            } else {
+                updateBalance(msg.sender, ownable.owner, price);
+                ownable.transferOwnership(msg.sender);
+                forSale.remove(ownable);
+                ownable.price = 0;
+            }
+        }
     }
 
-    function checkBalance(address paymentAddressBuyer, int price) public view returns (bool success) {
-        if (paymentAddressBuyer == userInfoA.paymentAddress && price <= userInfoA.currentBalance) {
+    //checks the address balance 
+    function checkBalance(address paymentAddressBuyer, uint price) public view returns (bool success) {
+        if (price <= paymentAddressBuyer.balance) {
             return true;
         }
-
-        if (paymentAddressBuyer == userInfoB.paymentAddress && price <= userInfoB.currentBalance) {
-            return true;
-        }
-
         return false;
     }
 
-    function updateBalance(address paymentAddressBuyer, address paymentAddressSeller, int price) public {
-        if (paymentAddressSeller == userInfoA.paymentAddress) {
-            userInfoA.currentBalance += price;
-        }
-
-        if (paymentAddressBuyer == userInfoB.paymentAddress) {
-            userInfoB.currentBalance -= price;
-        }
-    }
-
-    function listArtwork(string memory name, int price) public onlyOwner {
-        artwork = new Artwork(name, price, msg.sender, address(this));
+    //updates the addresses balance
+    function updateBalance(address paymentAddressBuyer, address paymentAddressSeller, uint price) public {
+        paymentAddressSeller.balance += price;
+        paymentAddressBuyer.balance -= price + (price * 0.01);
+        address(this).balance += (price * 0.01);
     }
 }

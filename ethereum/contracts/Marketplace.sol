@@ -6,50 +6,25 @@ import "./Ownable.sol";
 
 contract Marketplace {
 
-    Ownable[] private ownables = [];
-    Ownable[] public forSale = [];
+    address payable public owner;
 
-    constructor() public {
+    Ownable[] public ownables;
 
+    constructor(address payable _owner) public {
+        owner = _owner;
     }
     
     //register new Ownable item in the marketplace
     function registerOwnable(Ownable ownable) private {
-        if (msg.sender == ownable.owner){
-            ownables.add(ownable);
+        if (msg.sender == ownable.owner()){
+            ownables.push(ownable);
         }
     }
 
     //generate and register new Artwork item in the marketplace
-    function registerArtwork(string memory _name, int _price, string memory _imageHash, string memory _imageUrl, address _author) public {
-        Artwork artwork = new Artwork(_name, _price, _imageHash, _imageUrl, _author);        
+    function registerArtwork(string memory _name, uint _price, bool _forSale, string memory _imageHash, string memory _imageUrl, address _author) public {
+        Artwork artwork = new Artwork(_name, _price, _forSale, _imageHash, _imageUrl, _author, address(this), this);        
         registerOwnable(artwork);
-    }
-
-    //declares ownable item for sale
-    function declareForSale(Ownable ownable, uint price) public {
-        if (msg.sender == ownable.owner){
-            ownable.upForSale(price);
-            forSale.add(ownable);
-        }
-    }
-
-    //Buyer buys ownable
-    function buyOwnable(Ownable ownable) public {
-        if(msg.sender == ownable.owner){
-            revert();
-        }
-        if(msg.sender != ownable.owner) {
-            uint price = forSale[ownable];
-            if (!checkBalance(msg.sender, price)){
-                revert();  
-            } else {
-                updateBalance(msg.sender, ownable.owner, price);
-                ownable.transferOwnership(msg.sender);
-                forSale.remove(ownable);
-                ownable.price = 0;
-            }
-        }
     }
 
     //checks the address balance 
@@ -60,10 +35,10 @@ contract Marketplace {
         return false;
     }
 
-    //updates the addresses balance
-    function updateBalance(address paymentAddressBuyer, address paymentAddressSeller, uint price) public {
-        paymentAddressSeller.balance += price;
+    /*//updates the addresses balance
+    function updateBalance(address payable paymentAddressBuyer, address payable paymentAddressSeller, uint price) public payable {
+        paymentAddressSeller.transfer(price);
         paymentAddressBuyer.balance -= price + (price * 0.01);
         address(this).balance += (price * 0.01);
-    }
+    }*/
 }

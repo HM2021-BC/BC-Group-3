@@ -5,46 +5,52 @@ import Layout from '../components/Layout';
 import { Link } from '../routes';
 
 class MarketplaceIndex extends Component {
-    static async getInitialProps() {
-        const marketplaces = await factory.methods.getDeployedMarketplaces().call();
+  static async getInitialProps() {
+    const marketplaces = await factory.methods.getDeployedMarketplaces().call();
+    const counter = marketplaces.length;
+    //const marketplace = await factory.methods.getDeployedMarketplace().call();
+    //const artworks = await marketplace.methods.artworks().call();
 
-        return { marketplaces };
-    }
+    //const marketplace = Marketplace(address);
+    
+    return { marketplaces, counter };
+  }
 
-renderMarketplaces() {
-  const items = this.props.marketplaces.map(address => {
-    console.log(address);
-    return {
-      header: address, 
-      description: (
-          <Link route={`/marketplace/${address}`}>
-              <a>View Marketplace</a>
+  renderArtworks() {
+    const items = this.props.marketplaces.map(address => {
+      return {
+        header: address,
+        description: (
+          <Link route={`/marketplaces/${address}`}>
+            <a>View Artwork</a>
           </Link>
-      ),
-      fluid: true
-    };
-  });
-  return <Card.Group items={items} />;
-}
+        ),
+        fluid: true
+      };
+    });
 
-render() {
+    return <Card.Group items={items} />;
+  }
+
+  render() {
     return (
       <Layout>
         <div>
-          <h3>Open Marketplaces</h3>
+          <h3>Registered Artworks</h3>
+          <h1>Hello, {this.props.counter}</h1>
 
           <Link route="/marketplaces/new">
             <a>
               <Button
                 floated="right"
-                content="Create Marketplace"
+                content="Register Artwork"
                 icon="add circle"
                 primary
               />
             </a>
           </Link>
 
-          {this.renderMarketplaces()}
+          {this.renderArtworks()}
         </div>
       </Layout>
     );

@@ -34,11 +34,4 @@ contract Marketplace {
         }
         return false;
     }
-
-    /*//updates the addresses balance
-    function updateBalance(address payable paymentAddressBuyer, address payable paymentAddressSeller, uint price) public payable {
-        paymentAddressSeller.transfer(price);
-        paymentAddressBuyer.balance -= price + (price * 0.01);
-        address(this).balance += (price * 0.01);
-    }*/
 }

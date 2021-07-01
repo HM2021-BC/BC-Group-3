@@ -38,26 +38,23 @@ contract Ownable {
   function buyOwnable() public {
       if(msg.sender == owner){
           revert();
+      } else if(!forSale) {
+          revert();
       } else {
           if (!marketplace.checkBalance(msg.sender, price)){
               revert();  
           } else {
-              purchaseProduct();
+            require(msg.value >= price);
+
+		        // If amount sent is too large, refund the difference
+		        if (msg.value > price) {
+        			uint refund = msg.value - price;
+        			msg.sender.transfer(refund);
+        		}
               transferOwnership();
               forSale = false;
               setPrice(0);
           }
       }
-  }
-
-  function purchaseProduct() payable public returns (bool) {
-	  require(msg.value >= price);
-
-		// If amount sent is too large, refund the difference
-		if (msg.value > price) {
-			uint refund = msg.value - price;
-			msg.sender.transfer(refund);
-		}
-		return true;
-	}
+  }	  
 }

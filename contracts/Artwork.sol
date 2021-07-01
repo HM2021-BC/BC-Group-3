@@ -5,7 +5,6 @@ import "./Marketplace.sol";
 
 contract Artwork is Ownable {
 
-    string public imageHash;
     string public imageUrl;
     address public author;
 
@@ -14,7 +13,7 @@ contract Artwork is Ownable {
         price = _price;
         forSale = _forSale;
         owner = msg.sender;
-        imageHash = _imageHash;
+        contentHash = _imageHash;
         imageUrl = _imageUrl;
         author = _author;
         marketplaceAddress = _marketplaceAddress;

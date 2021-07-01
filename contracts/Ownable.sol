@@ -18,7 +18,7 @@ contract Ownable {
       _;
   }
 
-  function transferOwnership() public {
+  function transferOwnership() private {
     owner = msg.sender;
   }
 
@@ -35,29 +35,27 @@ contract Ownable {
   }
 
   //Buyer buys ownable
-  function buyOwnable() public {
+  function buyOwnable() payable public returns (bool){
       if(msg.sender == owner){
+          revert();
+      } else if(!forSale) {
           revert();
       } else {
           if (!marketplace.checkBalance(msg.sender, price)){
               revert();  
           } else {
-              purchaseProduct();
-              transferOwnership();
               forSale = false;
+              require(msg.value >= price);
+              // If amount sent is too large, refund the difference
+              if (msg.value > price) {
+                	uint refund = msg.value - price;
+                	msg.sender.transfer(refund);
+              }
+		          transferOwnership();
               setPrice(0);
+              return true;
           }
       }
+      return false;
   }
-
-  function purchaseProduct() payable public returns (bool) {
-	  require(msg.value >= price);
-
-		// If amount sent is too large, refund the difference
-		if (msg.value > price) {
-			uint refund = msg.value - price;
-			msg.sender.transfer(refund);
-		}
-		return true;
-	}
 }

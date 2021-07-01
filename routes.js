@@ -2,7 +2,8 @@
 const routes = require('next-routes')();
 
 routes
-  .add('/marketplaces/new', '/marketplaces/new')
-  .add('/marketplaces/:address', '/marketplaces/show')
+  .add('/artwork/new', '/artwork/new')
+  .add('/artwork/all', '/artwork/all')
+  .add('/artwork/:address', '/artwork/show')
 
 module.exports = routes;

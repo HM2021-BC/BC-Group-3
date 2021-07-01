@@ -3,17 +3,23 @@ import { Card, Button } from 'semantic-ui-react';
 import web3 from './ethereum/web3';
 import factory from './ethereum/factory';
 import Layout from './components/Layout';
+import web3 from './web3';
 import { Link } from './routes';
+import Marketplace from './build/contracts/Marketplace.json';
 
 class MarketplaceIndex extends Component {
   static async getInitialProps() {
-    const marketplaces = await factory.methods.getDeployedMarketplaces().call();
+    const marketplaceAddress = await factory.methods.marketplace().call();
 
-    return { marketplaces };
+    const marketplace = new web3.eth.Contract(Marketplace.abi, marketplaceAddress);
+
+    var artworks = await marketplace.methods.ownables().call();
+
+    return { artworks };
   }
 
   renderMarketplaces() {
-    const items = this.props.marketplaces.map(address => {
+    const items = this.props.artworks.map(address => {
       return {
         header: address,
         description: (

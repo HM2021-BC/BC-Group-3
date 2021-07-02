@@ -6,14 +6,18 @@ import "./Marketplace.sol";
 contract MarketplaceCreator {
     address public marketplace;
 
-    constructor () public {
+    constructor() public {
         createMarketplace();
     }
 
-    function createMarketplace() public {
+    function createMarketplace() private {
         address newMarketplace = address (
             new Marketplace(msg.sender)
         );
         marketplace = newMarketplace;
+    }
+
+    function getDeployedMarketplace() public view returns(address) {
+        return marketplace;
     }
 }

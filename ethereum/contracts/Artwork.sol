@@ -2,21 +2,37 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 import "./Marketplace.sol";
+import "./Ownable.sol";
 
 contract Artwork is Ownable {
+    string public artworkName;
+    string public artworkUrl;
+    bytes32 public artworkHash;
+    uint public artworkPrice;
+    bool public isArtworkForSale;
 
-    string public imageUrl;
-    address public author;
+    constructor(string memory _artworkName, string memory _artworkUrl) Ownable() public {
+        artworkName = _artworkName;
+        artworkUrl = _artworkUrl;
+        artworkHash = keccak256(abi.encode(_artworkUrl));
+        isArtworkForSale = false;
+    }
 
-    constructor(string memory _name, uint _price, bool _forSale, string memory _imageHash, string memory _imageUrl, address _author, address _marketplaceAddress, Marketplace _marketplace) public {
-        name = _name;
-        price = _price;
-        forSale = _forSale;
-        owner = msg.sender;
-        contentHash = _imageHash;
-        imageUrl = _imageUrl;
-        author = _author;
-        marketplaceAddress = _marketplaceAddress;
-        marketplace = _marketplace;    
+    function sellArtwork (uint _artworkPrice) public onlyOwner {
+        artworkPrice = _artworkPrice;
+        isArtworkForSale = true;
+    }
+
+    function buyArtwork() public payable {
+
+        require(owner != msg.sender, 'Owner can not buy their own artwork.');
+        require(isArtworkForSale, 'Artwork is currently not for sale.');
+        require(msg.value == artworkPrice, 'Need to send the exact price.');
+
+        address payable payableOwner = address(uint160(owner));
+        payableOwner.transfer(msg.value);
+
+        transferOwnership(msg.sender);
+        isArtworkForSale = false;
     }
 }

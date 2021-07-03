@@ -3,7 +3,7 @@ import { Container } from 'semantic-ui-react';
 import Head from 'next/head';
 import Header from './Header';
 
-const layout = props => {
+const Layout = (props) => {
   return (
     <Container>
       <Head>
@@ -19,4 +19,4 @@ const layout = props => {
   );
 };
 
-export default layout;
+export default Layout;

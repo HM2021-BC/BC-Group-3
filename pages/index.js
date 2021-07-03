@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import { Link } from '../routes';
 import Marketplace from '../ethereum/marketplace';
 import Artwork from '../ethereum/artwork';
+import web3 from '../ethereum/web3';
 
 class MarketplaceIndex extends Component {
   static async getInitialProps() {
@@ -38,7 +39,7 @@ class MarketplaceIndex extends Component {
       let cardColor;
       let extraContent;
       if (this.props.artworkProps[index].isArtworkForSale) {
-        metadata = "Price: " + web3.utils.toEther(this.props.artworkProps[index].artworkPrice, 'wei') + "Ether";
+        metadata = "Price: " + web3.utils.fromWei(this.props.artworkProps[index].artworkPrice, 'ether') + " Ether";
         cardColor = "green";
         extraContent = (
           <Link route={`/artworks/${address}/buy`}>

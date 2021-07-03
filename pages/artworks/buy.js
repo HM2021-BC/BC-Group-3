@@ -43,7 +43,7 @@ class ArtworkBuy extends Component {
       <Layout>
         <h3>Buy this Artwork</h3>
         <h4>{this.props.artworkName}</h4>
-        <h4>Price: {web3.utils.toEther(this.props.artworkPrice, 'wei')} Ether</h4>
+        <h4>Price: {web3.utils.fromWei(this.props.artworkPrice, 'ether')} Ether</h4>
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           

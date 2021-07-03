@@ -9,7 +9,7 @@ import Marketplace from '../../ethereum/marketplace';
 class ArtworkNew extends Component {
   static async getInitialProps() {
     const marketplaceAddress = await factory.methods.marketplace().call();
-    const registrationFee = Marketplace(marketplaceAddress).methods.registrationFee().call();
+    const registrationFee = await Marketplace(marketplaceAddress).methods.registrationFee().call();
     
     return { marketplaceAddress, registrationFee };
   }
@@ -42,7 +42,7 @@ class ArtworkNew extends Component {
     return (
       <Layout>
         <h3>Register a Artwork</h3>
-        <h4>Registration Fee: {this.props.registrationFee} Ether</h4>
+        <h4>Registration Fee: {web3.utils.fromWei(this.props.registrationFee, 'ether')} Ether</h4>
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>

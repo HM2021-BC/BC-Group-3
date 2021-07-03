@@ -16,8 +16,9 @@ Geld in Form von Ethereum an den Verkäufer.
 
 * Ethereum
 * Solidity
-* Truffle Suite
+* Truffle
 * Morpheus Labs SEED
+* React
 
 ## Team (BC-Group-3) 
 
@@ -28,21 +29,26 @@ Geld in Form von Ethereum an den Verkäufer.
 ## Benutzung
 
 ### Kompilieren des Projekts
-1. Navigation in den Projektordner: cd BC-Group-3
+1. Navigation in den Projektordner: cd BC-Group-3/ethereum
 2. Kompilieren des Projekts: truffle compile
 
-### Ausführung der Tests
-1. Navigation in den Projektordner: cd BC-Group-3
-2. Ausführung der Tests: truffle test
-
 ### Einsatz der Smart Contracts im lokalem Ethereum Netzwerk der Truffle Entwicklungsumgebung
-1. Navigation in den Projektordner: cd BC-Group-3
+1. Navigation in den Projektordner: cd BC-Group-3/ethereum
 2. Öffnen der Truffle Entwicklungsumgebung: truffle develop
 3. Deployen der Smart Contracts im lokalem Ethereum Netzwerk: truffle migrate
+
+### Ausführung der Tests
+1. Navigation in den Projektordner: cd BC-Group-3/ethereum
+2. Ausführung der Tests: truffle test
 
 ### Einsatz der Smart Contracts im Morpheus Labs BPaaS Ethereum PoA Netzwerk
 1. Navigation in den Ordner ethereum im Projektordner: cd BC-Group-3/ethereum
 2. Einsatz der Smart Contracts im Moprheus Labs Ethereum Netzwerk: truffle migrate --network private_poa
+
+### Start des Frontends
+1. Navigation in den Projektordner: cd BC-Group-3/
+2. Install dependencies: npm install
+3. Start frontend: node server.js
 
 ## GitHub Repository
 

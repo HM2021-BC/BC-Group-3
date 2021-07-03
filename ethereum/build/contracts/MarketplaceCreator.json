@@ -1335,12 +1335,12 @@
     "660": {
       "events": {},
       "links": {},
-      "address": "0x64D904DAdd50D1d7452F6532552cb454ebA4d006",
-      "transactionHash": "0x5433e1407b361501b009d7cdd09bd428b56088e367d8fd905557170514dcdcb4"
+      "address": "0xdd2bcBB993C78Fe697c69753ee65eBa311f0e456",
+      "transactionHash": "0x3ecbe689d1fa2c71978bd94bdaf0a6fb4dc1fb33e6e3362dc5243060711724e1"
     }
   },
   "schemaVersion": "3.4.0",
-  "updatedAt": "2021-07-03T19:24:09.509Z",
+  "updatedAt": "2021-07-03T20:20:39.310Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

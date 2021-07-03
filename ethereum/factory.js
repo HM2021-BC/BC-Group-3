@@ -1,7 +1,7 @@
 import web3 from './web3';
 import MarketplaceFactory from './build/contracts/MarketplaceCreator.json';
 
-const marketplaceFactoryAddress = "0x64D904DAdd50D1d7452F6532552cb454ebA4d006";
+const marketplaceFactoryAddress = "0xdd2bcBB993C78Fe697c69753ee65eBa311f0e456";
 
 const instance = new web3.eth.Contract(MarketplaceFactory.abi, marketplaceFactoryAddress);
 

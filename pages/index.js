@@ -30,7 +30,7 @@ class MarketplaceIndex extends Component {
       });
     }
 
-    return { marketplace, artworkAddresses, artworkProps };
+    return { artworkAddresses, artworkProps };
   }
 
   renderArtworks() {

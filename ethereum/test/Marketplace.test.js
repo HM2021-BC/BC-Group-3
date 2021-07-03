@@ -2,29 +2,29 @@ const Marketplace = artifacts.require("Marketplace");
 const MarketplaceCreator = artifacts.require("MarketplaceCreator");
 const Artwork = artifacts.require("Artwork");
 
-const balanceA = 1000000000;
-const balanceB = 1000000000;
-
-let marketplaceCreator;
 let marketplace;
-let marketplaceAddresses;
-let artwork;
+let marketplaceAddress;
 
-contract("Bazinga Test", (accounts) => {
+contract("Marketplace Test", (accounts) => {
     before(async()=>{
-        marketplaceCreator = await MarketplaceCreator.new()
-        await marketplaceCreator.createMarketplace(accounts[0]);
-        marketplaceAddresses = await marketplaceCreator.getDeployedMarketplaces.call();
-        marketplace = await Marketplace.at(marketplaceAddresses[0]);
-        //artwork = await Artwork.new("Testname", addressA, addressB, address(marketplace));
+        var marketplaceCreator = await MarketplaceCreator.new({from: accounts[0]});
+        marketplaceAddress = await marketplaceCreator.marketplace.call();
+        marketplace = await Marketplace.at(marketplaceAddress);
     });
 
     it('marketplace has address', async () => {
-        assert.ok(marketplaceAddresses);
+        assert.ok(marketplaceAddress);
     });
 
     it('marketplace has owner', async () => {
-        owner = await marketplace.owner.call();
+        var owner = await marketplace.owner.call();
         assert.ok(owner);
+    });
+
+    it('marketplace can register artwork', async () => {
+        await marketplace.registerArtwork('Name Test', 'URL Test', {from: accounts[0], value: 10});
+        var artworkAddresses = await marketplace.getArtworks();
+        var artwork = await Artwork.at(artworkAddresses[0])
+        assert.ok(artwork);
     });
 })

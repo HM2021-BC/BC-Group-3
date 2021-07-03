@@ -18,6 +18,7 @@ contract Marketplace is Ownable{
         payableOwner.transfer(msg.value);
 
         Artwork artwork = new Artwork(_artworkName, _artworkUrl);
+        artwork.transferOwnership(msg.sender);
         artworks.push(address(artwork));
     }
 

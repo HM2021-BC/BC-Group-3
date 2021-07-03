@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Button, Input, Message } from 'semantic-ui-react';
 import Layout from '../../components/Layout';
-import factory from '../../ethereum/factory';
 import web3 from '../../ethereum/web3';
 import { Router } from '../../routes';
-import Marketplace from '../../ethereum/marketplace';
 import Artwork from '../../ethereum/artwork';
 
 class ArtworkSell extends Component {
@@ -26,7 +24,7 @@ class ArtworkSell extends Component {
     try {
       const accounts = await web3.eth.requestAccounts();
 
-      await Artwork(this.props.artworkAddress).methods.sellArtwork(this.state.artworkPrice)
+      await Artwork(this.props.artworkAddress).methods.sellArtwork(web3.utils.toWei(this.state.artworkPrice, 'ether'))
       .send({from: accounts[0]});
 
       Router.pushRoute('/');
@@ -45,7 +43,7 @@ class ArtworkSell extends Component {
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
-            <label>Selling Price</label>
+            <label>Selling Price in Ether</label>
             <Input
               label="Price"
               labelPosition="right"

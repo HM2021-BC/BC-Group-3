@@ -38,7 +38,7 @@ class MarketplaceIndex extends Component {
       let cardColor;
       let extraContent;
       if (this.props.artworkProps[index].isArtworkForSale) {
-        metadata = "Price: " + this.props.artworkProps[index].artworkPrice;
+        metadata = "Price: " + web3.utils.toEther(this.props.artworkProps[index].artworkPrice, 'wei') + "Ether";
         cardColor = "green";
         extraContent = (
           <Link route={`/artworks/${address}/buy`}>
@@ -71,49 +71,53 @@ class MarketplaceIndex extends Component {
             </a>
           </Link>
         );
-  }
+      }
 
       return {
-  header: this.props.artworkProps[index].artworkName,
-  description: (
-    <div>
-      <br />
-      <div>
-        <b>
-          Owner Address: {this.props.artworkProps[index].owner}
-        </b>
-      </div>
-      <div>Artwork Address: {address}</div>
-      <div>Artwork Hash: {this.props.artworkProps[index].artworkHash}</div>
-      <div>
-        <a href={this.props.artworkProps[index].artworkUrl}
-          target="_blank"
-          rel="noopener noreferrer">
-          Artwork URL
+        header: this.props.artworkProps[index].artworkName,
+        description: (
+          <div>
+            <br />
+            <div>
+              <b>
+                Owner Address: {this.props.artworkProps[index].owner}
+              </b>
+            </div>
+            <div>Artwork Address: {address}</div>
+            <div>Artwork Hash: {this.props.artworkProps[index].artworkHash}</div>
+            <div>
+              <a href={this.props.artworkProps[index].artworkUrl}
+                target="_blank"
+                rel="noopener noreferrer">
+                Artwork URL
               </a>
-      </div>
-    </div>
-  ),
-  meta: metadata,
-  color: cardColor,
-  extra: extraContent,
-  fluid: true
-};
+            </div>
+          </div>
+        ),
+        meta: metadata,
+        color: cardColor,
+        extra: extraContent,
+        fluid: true
+      };
     });
 
-return <Card.Group items={items} />;
+    if (this.props.artworkAddresses.length === 0) {
+      return <div>There are no registered Artworks yet.</div> 
+    }
+
+    return <Card.Group items={items} />;
   }
 
-render() {
-  return (
-    <Layout>
-      <div>
-        <h3>Registered Artworks</h3>
-        {this.renderArtworks()}
-      </div>
-    </Layout>
-  );
-}
+  render() {
+    return (
+      <Layout>
+        <div>
+          <h3>Registered Artworks</h3>
+          {this.renderArtworks()}
+        </div>
+      </Layout>
+    );
+  }
 }
 
 export default MarketplaceIndex;

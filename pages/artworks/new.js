@@ -8,9 +8,10 @@ import Marketplace from '../../ethereum/marketplace';
 
 class ArtworkNew extends Component {
   static async getInitialProps() {
-    const marketplaceAddress = await factory.methods.marketplace().call()
+    const marketplaceAddress = await factory.methods.marketplace().call();
+    const registrationFee = Marketplace(marketplaceAddress).methods.registrationFee().call();
     
-    return { marketplaceAddress };
+    return { marketplaceAddress, registrationFee };
   }
 
   state = {
@@ -27,7 +28,7 @@ class ArtworkNew extends Component {
       const accounts = await web3.eth.requestAccounts();
 
       await Marketplace(this.props.marketplaceAddress).methods.registerArtwork(this.state.artworkName, this.state.artworkUrl)
-      .send({from: accounts[0], value: 10});
+      .send({from: accounts[0], value: web3.utils.toWei('0.01', 'ether')});
 
       Router.pushRoute('/');
     } catch (err) {
@@ -40,7 +41,8 @@ class ArtworkNew extends Component {
   render() {
     return (
       <Layout>
-        <h3>Create a Artwork</h3>
+        <h3>Register a Artwork</h3>
+        <h4>Registration Fee: {this.props.registrationFee} Ether</h4>
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
@@ -65,7 +67,7 @@ class ArtworkNew extends Component {
           </Form.Field>
           <Message error header="Oops!" content={this.state.errorMessage} />
           <Button loading={this.state.loading} primary>
-            Create!
+            Register!
           </Button>
         </Form>
       </Layout>

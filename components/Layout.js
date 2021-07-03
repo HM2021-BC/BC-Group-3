@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { Container } from 'semantic-ui-react';
 import Head from 'next/head';
 import Header from './Header';
 
-export default props => {
+const layout = props => {
   return (
     <Container>
       <Head>
@@ -18,3 +18,5 @@ export default props => {
     </Container>
   );
 };
+
+export default layout;

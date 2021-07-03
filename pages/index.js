@@ -41,79 +41,79 @@ class MarketplaceIndex extends Component {
         metadata = "Price: " + this.props.artworkProps[index].artworkPrice;
         cardColor = "green";
         extraContent = (
-          <div className='ui two buttons'>
-            <Link route={`/artworks/${address}/buy`}>
-              <a>
+          <Link route={`/artworks/${address}/buy`}>
+            <a>
+              <div className='ui two buttons'>
                 <Button animated='vertical'>
                   <Button.Content hidden>Buy Artwork</Button.Content>
                   <Button.Content visible>
                     <Icon name='shop' />
                   </Button.Content>
                 </Button>
-              </a>
-            </Link>
-          </div>
+              </div>
+            </a>
+          </Link>
         );
       } else {
         metadata = "Not for Sale";
         cardColor = "red";
         extraContent = (
-          <div className='ui two buttons'>
-            <Link route={`/artworks/${address}/sell`}>
-              <a>
+          <Link route={`/artworks/${address}/sell`}>
+            <a>
+              <div className='ui two buttons'>
                 <Button animated='vertical'>
                   <Button.Content hidden>Sell Artwork</Button.Content>
                   <Button.Content visible>
                     <Icon name='money' />
                   </Button.Content>
                 </Button>
-              </a>
-            </Link>
-          </div>
+              </div>
+            </a>
+          </Link>
         );
-      }
+  }
 
       return {
-        header: this.props.artworkProps[index].artworkName,
-        description: (
-          <div>
-            <br />
-            <div>
-              <b>
-                Owner Address: {this.props.artworkProps[index].owner}
-              </b>
-            </div>
-            <div>Artwork Address: {address}</div>
-            <div>Artwork Hash: {this.props.artworkProps[index].artworkHash}</div>
-            <div>
-              <a href={this.props.artworkProps[index].artworkUrl}
-                target="_blank"
-                rel="noopener noreferrer">
-                Artwork URL
+  header: this.props.artworkProps[index].artworkName,
+  description: (
+    <div>
+      <br />
+      <div>
+        <b>
+          Owner Address: {this.props.artworkProps[index].owner}
+        </b>
+      </div>
+      <div>Artwork Address: {address}</div>
+      <div>Artwork Hash: {this.props.artworkProps[index].artworkHash}</div>
+      <div>
+        <a href={this.props.artworkProps[index].artworkUrl}
+          target="_blank"
+          rel="noopener noreferrer">
+          Artwork URL
               </a>
-            </div>
-          </div>
-        ),
-        meta: metadata,
-        color: cardColor,
-        extra: extraContent,
-        fluid: true
-      };
+      </div>
+    </div>
+  ),
+  meta: metadata,
+  color: cardColor,
+  extra: extraContent,
+  fluid: true
+};
     });
 
-    return <Card.Group items={items} />;
+return <Card.Group items={items} />;
   }
 
-  render() {
-    return (
-      <Layout>
-        <div>
-          <h3>Registered Artworks</h3>
-          {this.renderArtworks()}
-        </div>
-      </Layout>
-    );
-  }
+render() {
+  return (
+    <Layout>
+      <div>
+        <h3>Registered Artworks</h3>
+        {this.renderArtworks()}
+      </div>
+    </Layout>
+  );
+}
 }
 
 export default MarketplaceIndex;

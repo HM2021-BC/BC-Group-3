@@ -5,18 +5,17 @@ import factory from '../../ethereum/factory';
 import web3 from '../../ethereum/web3';
 import { Router } from '../../routes';
 import Marketplace from '../../ethereum/marketplace';
+import Artwork from '../../ethereum/artwork';
 
 class ArtworkBuy extends Component {
-  static async getInitialProps() {
-    const marketplaceAddress = await factory.methods.marketplace().call()
-    
-    return { marketplaceAddress };
+  static async getInitialProps(props) {
+    const artworkName = await Artwork(props.query.address).methods.artworkName().call();
+    const artworkPrice = await Artwork(props.query.address).methods.artworkPrice().call();
+
+    return { artworkAddress: props.query.address, artworkName, artworkPrice };
   }
 
-  state = {
-    artworkName: '',
-    artworkUrl: ''
-  };
+  state = {};
 
   onSubmit = async event => {
     event.preventDefault();
@@ -24,10 +23,12 @@ class ArtworkBuy extends Component {
     this.setState({ loading: true, errorMessage: '' });
 
     try {
+      const artworkPrice = await Artwork(this.props.artworkAddress).methods.artworkPrice().call();
+
       const accounts = await web3.eth.requestAccounts();
 
-      await Marketplace(this.props.marketplaceAddress).methods.registerArtwork(this.state.artworkName, this.state.artworkUrl)
-      .send({from: accounts[0], value: 10});
+      await Artwork(this.props.artworkAddress).methods.buyArtwork()
+      .send({from: accounts[0], value: artworkPrice});
 
       Router.pushRoute('/');
     } catch (err) {
@@ -40,32 +41,15 @@ class ArtworkBuy extends Component {
   render() {
     return (
       <Layout>
-        <h3>Create a Artwork</h3>
+        <h3>Buy this Artwork</h3>
+        <h4>{this.props.artworkName}</h4>
+        <h4>Price: {this.props.artworkPrice}</h4>
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
-          <Form.Field>
-            <label>Artwork Name</label>
-            <Input
-              label="Name"
-              labelPosition="right"
-              value={this.state.artworkName}
-              onChange={event =>
-                this.setState({ artworkName: event.target.value })}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>Artwork URL</label>
-            <Input
-              label="URL"
-              labelPosition="right"
-              value={this.state.artworkUrl}
-              onChange={event =>
-                this.setState({ artworkUrl: event.target.value })}
-            />
-          </Form.Field>
+          
           <Message error header="Oops!" content={this.state.errorMessage} />
           <Button loading={this.state.loading} primary>
-            Create!
+            Buy!
           </Button>
         </Form>
       </Layout>

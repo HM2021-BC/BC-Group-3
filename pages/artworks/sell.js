@@ -9,7 +9,9 @@ import Artwork from '../../ethereum/artwork';
 
 class ArtworkSell extends Component {
   static async getInitialProps(props) {
-    return { artworkAddress: props.query.address };
+    const artworkName = await Artwork(props.query.address).methods.artworkName().call();
+
+    return { artworkAddress: props.query.address, artworkName };
   }
 
   state = {
@@ -38,7 +40,8 @@ class ArtworkSell extends Component {
   render() {
     return (
       <Layout>
-        <h3>Sell a Artwork</h3>
+        <h3>Sell this Artwork</h3>
+        <h4>{this.props.artworkName}</h4>
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>

@@ -9,8 +9,8 @@ contract Ownable {
   }
 
   modifier onlyOwner() {
-    if (msg.sender == owner)
-      _;
+    require(msg.sender == owner, "You are not the Owner.");
+    _;
   }
 
   function transferOwnership(address newOwner) onlyOwner public {

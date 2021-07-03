@@ -23,6 +23,10 @@ contract Artwork is Ownable {
         isArtworkForSale = true;
     }
 
+    function cancelSellArtwork () public onlyOwner {
+        isArtworkForSale = false;
+    }
+
     function buyArtwork() public payable {
         require(owner != msg.sender, 'Owner can not buy their own artwork.');
         require(isArtworkForSale, 'Artwork is currently not for sale.');

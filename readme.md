@@ -1,54 +1,44 @@
 # Bazinga
 
-## Projektbeschreibung
+## Overview
 
-Über die Plattform sollen die Urheberrechte bzw. Eigentumsrechte für immaterielle
-Vermögensgegenstände verwaltet und gehandelt werden können. Insbesondere sog.
-Memes, d.h. kleine Medieninhalte, die über das Internet verbreitet werden, wie Bilder oder
-Videos mit einer kurzen prägnanten Aussage, bei denen die Urheberschaft oft nicht mehr
-feststellbar ist, da sich diese viral im Internet verbreiten.
-Auf dem Marktplatz wird ein Smart Contract zwischen zwei Handelnden abgeschlossen und
-ausgeführt. Die dApp behält sich hierfür einen kleinen Prozentsatz für die
-Transaktionsgebühr ein. Dabei gehen die Eigentumsrechte an den Käufer über und das
-Geld in Form von Ethereum an den Verkäufer.
+A Blockchain project to help on the one hand creators of the virtual pieces of art like memes or other immaterial assets to sell their copyrights and gain some money for that and on the other hand to represent a large selection for users who are willing to buy an immaterial asset.
 
-## Technologien
+A seller places his artwork on the platform and registers his ownership. A buyer selects an artwork and if his account balance is enough for a purchase, he is allowed to continue the process. The balance of the buyer is being reduced by the artwork price and the balance of the seller is being increased. The seller has to transfer the copyrights to the buyer. If the balance of the buyer does not allow the purchase, that is the end point.
+
+![](documentation/BazingaProcessBPMN.png)
+
+## Tech Stack
 
 * Ethereum
 * Solidity
 * Truffle
-* Morpheus Labs SEED
 * React
+* Morpheus Labs SEED
+
+## Usage in Morpheus Labs SEED
+
+### Run tests for the contracts (optional)
+1. Navigate in the ethereum directory: cd BC-Group-3/ethereum
+2. Start truffle development environment: truffle develop
+3. Start tests: truffle test
+
+### Deploy contracts in Morpheus Labs Ethereum Network
+1. Navigate in the ethereum directory: cd BC-Group-3/ethereum
+2. Deploy contracts: truffle migrate --network private_poa
+3. Copy the contact address of the MarketplaceCreator
+
+### Start the React Frontend
+1. Insert the contact address of the MarketplaceCreator into the factory.js file in the ethereum directory
+1. Navigate in the root directory: cd BC-Group-3
+2. Install dependencies: npm install
+3. Start frontend: node server.js
 
 ## Team (BC-Group-3) 
 
 * Vitaliia Savchyn - savchyn@hm.edu
 * Fabian Rittmeier - f.rittmeier@hm.edu
 * Simon Hirner - simon.hirner@hm.edu
-
-## Benutzung
-
-### Kompilieren des Projekts
-1. Navigation in den Projektordner: cd BC-Group-3/ethereum
-2. Kompilieren des Projekts: truffle compile
-
-### Einsatz der Smart Contracts im lokalem Ethereum Netzwerk der Truffle Entwicklungsumgebung
-1. Navigation in den Projektordner: cd BC-Group-3/ethereum
-2. Öffnen der Truffle Entwicklungsumgebung: truffle develop
-3. Deployen der Smart Contracts im lokalem Ethereum Netzwerk: truffle migrate
-
-### Ausführung der Tests
-1. Navigation in den Projektordner: cd BC-Group-3/ethereum
-2. Ausführung der Tests: truffle test
-
-### Einsatz der Smart Contracts im Morpheus Labs BPaaS Ethereum PoA Netzwerk
-1. Navigation in den Ordner ethereum im Projektordner: cd BC-Group-3/ethereum
-2. Einsatz der Smart Contracts im Moprheus Labs Ethereum Netzwerk: truffle migrate --network private_poa
-
-### Start des Frontends
-1. Navigation in den Projektordner: cd BC-Group-3/
-2. Install dependencies: npm install
-3. Start frontend: node server.js
 
 ## GitHub Repository
 

@@ -16,4 +16,8 @@ contract Ownable {
   function transferOwnership(address newOwner) onlyOwner public {
     if (newOwner != address(0)) owner = newOwner;
   }
+
+  function transferOwnershipInternal(address newOwner) internal {
+    if (newOwner != address(0)) owner = newOwner;
+  }
 }

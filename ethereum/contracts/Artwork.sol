@@ -34,7 +34,7 @@ contract Artwork is Ownable {
 
         payable(owner).transfer(msg.value);
 
-        transferOwnership(msg.sender);
+        transferOwnershipInternal(msg.sender);
         isArtworkForSale = false;
     }
 }

@@ -22,7 +22,7 @@ contract("Marketplace Test", (accounts) => {
     });
 
     it('marketplace can register artwork', async () => {
-        await marketplace.registerArtwork('Name Test', 'URL Test', {from: accounts[0], value: 10});
+        await marketplace.registerArtwork('Name Test', 'URL Test', {from: accounts[0], value: 10000000000000000});
         var artworkAddresses = await marketplace.getArtworks();
         var artwork = await Artwork.at(artworkAddresses[0])
         assert.ok(artwork);

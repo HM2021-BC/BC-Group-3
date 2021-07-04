@@ -23,12 +23,10 @@ class ArtworkBuy extends Component {
     this.setState({ loading: true, errorMessage: '' });
 
     try {
-      const artworkPrice = await Artwork(this.props.artworkAddress).methods.artworkPrice().call();
-
       const accounts = await web3.eth.requestAccounts();
 
       await Artwork(this.props.artworkAddress).methods.buyArtwork()
-      .send({from: accounts[0], value: artworkPrice});
+      .send({from: accounts[0], value: this.props.artworkPrice});
 
       Router.pushRoute('/');
     } catch (err) {

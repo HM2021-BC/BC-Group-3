@@ -8,13 +8,19 @@ A seller places his artwork on the platform and registers his ownership. A buyer
 
 ![](documentation/BazingaProcessBPMN.png)
 
+<video width="702" height="395" controls>
+  <source src="documentation/ShowCases.mp4" type="video/mp4">
+</video>
+
 ## Tech Stack
 
 * Ethereum
 * Solidity
 * Truffle
 * React
+* Node.js
 * Morpheus Labs SEED
+* MetaMask
 
 ## Usage in Morpheus Labs SEED
 

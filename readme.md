@@ -23,13 +23,13 @@ A seller places his artwork on the platform and registers his ownership. A buyer
 2. Start truffle development environment: truffle develop
 3. Start tests: truffle test
 
-### Deploy contracts in Morpheus Labs Ethereum Network
+### Deploy contracts in Morpheus Labs Ethereum Network (only if not already deployed)
 1. Navigate in the ethereum directory: cd BC-Group-3/ethereum
 2. Deploy contracts: truffle migrate --network private_poa
 3. Copy the contact address of the MarketplaceCreator
+4. Insert the contact address into the factory.js file in the ethereum directory
 
 ### Start the React Frontend
-1. Insert the contact address of the MarketplaceCreator into the factory.js file in the ethereum directory
 1. Navigate in the root directory: cd BC-Group-3
 2. Install dependencies: npm install
 3. Start frontend: node server.js

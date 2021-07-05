@@ -41,7 +41,7 @@ class ArtworkNew extends Component {
   render() {
     return (
       <Layout>
-        <h3>Register a Artwork</h3>
+        <h3>Register an Artwork</h3>
         <h4>Registration Fee: {web3.utils.fromWei(this.props.registrationFee, 'ether')} Ether</h4>
 
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>

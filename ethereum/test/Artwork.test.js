@@ -79,4 +79,22 @@ contract("Artwork Test", (accounts) => {
         var owner = await artwork.owner.call();
         assert.equal(owner, accounts[1]);
     });
+
+    it('Sale can be cancelled by Owner', async () => {
+        try{
+            await artwork.cancelSellArtwork({from: accounts[0]})
+            assert(true);
+        } catch(error){
+            assert(error);
+        }
+    })
+
+    it('Sale cannot be cancelled by 3rd party', async () => {
+        try{
+            await artwork.cancelSellArtwork({from: accounts[1]})
+            assert(false);
+        } catch(error){
+            assert(error);
+        }
+    })
 })

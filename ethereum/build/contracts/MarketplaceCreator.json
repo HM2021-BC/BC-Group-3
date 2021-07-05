@@ -1199,12 +1199,12 @@
     "660": {
       "events": {},
       "links": {},
-      "address": "0x52754F331Dd52F16D0f38693B0126420AC2eB3Ea",
-      "transactionHash": "0xd69e6b613fc2b97c381ac16cc0907737643d9fc66b04c89960e7c74f2dbd182d"
+      "address": "0xDeBF84434A03A9FeD93B38bf10a33d95cCc9F1D1",
+      "transactionHash": "0xe63c08abe6c928e35da149c4d5ef1623c94d7c134974efcc4162794110082f4b"
     }
   },
   "schemaVersion": "3.4.0",
-  "updatedAt": "2021-07-04T20:30:34.221Z",
+  "updatedAt": "2021-07-05T09:33:19.609Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

@@ -2,9 +2,9 @@
 
 ## Overview
 
-A Blockchain project to help on the one hand creators of the virtual pieces of art like memes or other immaterial assets to sell their copyrights and gain some money for that and on the other hand to represent a large selection for users who are willing to buy an immaterial asset.
+A Blockchain project to help the creators of immaterial assets, such as memes or other artworks, to sell their copyrights as well as gain some money and offer a wide variety of immaterial assets to potential buyers.
 
-A seller places his artwork on the platform and registers his ownership. A buyer selects an artwork and if his account balance is enough for a purchase, he is allowed to continue the process. The balance of the buyer is being reduced by the artwork price and the balance of the seller is being increased. The seller has to transfer the copyrights to the buyer. If the balance of the buyer does not allow the purchase, that is the end point.
+A seller places his artwork on the platform and registers his ownership. The platform is charging a registration fee for every registration thus generating profit. A buyer selects an artwork and if his account balance is enough for a purchase, he is allowed to continue the process. The balance of the buyer is being reduced by the artwork price and the balance of the seller is being increased. The seller has to transfer the copyrights to the buyer. If the balance of the buyer does not allow the purchase that is the end point.
 
 ![](documentation/BazingaProcessBPMN.png)
 
